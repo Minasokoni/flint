@@ -1,0 +1,2 @@
+# flint
+Javascript Project Boilerplate
