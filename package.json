@@ -1,0 +1,53 @@
+{
+  "name": "flint",
+  "version": "1.0.0",
+  "description": "Javascript Project Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel -d -s ./dist ./src",
+    "lint": "eslint --ext .js",
+    "dev": "",
+    "test": "jest --findRelatedTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minasokoni/flint.git"
+  },
+  "author": "Robert Barnwell <robert@robertismy.name>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Minasokoni/flint/issues"
+  },
+  "homepage": "https://github.com/Minasokoni/flint#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "eslint": "^6.2.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
+    "prettier": "^1.18.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --ext .js",
+      "git add",
+      "prettier --write"
+    ],
+    "*.{json, md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
